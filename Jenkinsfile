@@ -1,18 +1,17 @@
 pipeline {
-
     agent any
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 bat 'python -m pip install -r requirements.txt'
+            }
+        }
+
+        stage('Update Pip') {
+            steps {
+                bat 'python -m pip install --upgrade pip'
             }
         }
 
