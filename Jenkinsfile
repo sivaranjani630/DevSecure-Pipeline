@@ -34,7 +34,7 @@ pipeline {
 
         stage('Docker Smoke Test') {
             steps {
-                bat 'D:\\DockerTools\\docker.bat run --rm devsecure-pipeline:%BUILD_NUMBER% python -c "import app.main; print('Application import successful')"'
+                bat 'D:\\DockerTools\\docker.bat run --rm devsecure-pipeline:%BUILD_NUMBER% python -c "import app.main; print(\"Application import successful\")"'
             }
         }
     }
